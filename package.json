@@ -1,0 +1,29 @@
+{
+  "name": "astro-theme-vitesse",
+  "type": "module",
+  "version": "1.0.2",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^2.3.1",
+    "@astrojs/react": "^3.6.0",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/tailwind": "^5.1.0",
+    "@radix-ui/react-icons": "^1.3.0",
+    "astro": "^4.11.3",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.4"
+  },
+  "devDependencies": {
+    "@iconify/react": "^5.0.1",
+    "prettier": "^3.3.2",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-tailwindcss": "^0.6.5"
+  }
+}

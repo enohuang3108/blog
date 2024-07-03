@@ -1,0 +1,40 @@
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+html.dark .astro-code,
+html.dark .astro-code span {
+  color: var(--shiki-dark);
+  background-color: #161b22;
+  font-style: var(--shiki-dark-font-style);
+  font-weight: var(--shiki-dark-font-weight);
+  text-decoration: var(--shiki-dark-text-decoration);
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+html:not(.dark) {
+  color-scheme: light;
+}
+
+.text-stroke {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #aaa;
+  font-family: "Inter";
+}
+
+.nav-link {
+  cursor: pointer;
+  --un-text-opacity: 1;
+  color: rgb(34 34 34 / var(--un-text-opacity));
+  opacity: 0.7;
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+  transition-duration: 0.2s;
+}
+.nav-link:hover {
+  opacity: 1;
+}

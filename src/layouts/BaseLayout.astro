@@ -1,0 +1,27 @@
+---
+import { fade } from "astro:transitions";
+import { ViewTransitions } from "astro:transitions";
+import BaseHead from "@/components/BaseHead.astro";
+import { Header } from "@/components/Header.jsx";
+import ScrollToTop from "@/components/ScrollToTop.jsx";
+
+const { ...head } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead {...head} />
+    <ViewTransitions />
+  </head>
+  <body class="bg-dot min-h-screen w-full font-sans">
+    <Header client:load url={Astro.url} />
+    <main
+      class="relative mx-auto max-w-3xl grow px-6 pb-16 pt-24 sm:pt-36"
+      transition:animate={fade({ duration: "0.4s" })}
+    >
+      <slot />
+      <ScrollToTop client:load />
+    </main>
+  </body>
+</html>

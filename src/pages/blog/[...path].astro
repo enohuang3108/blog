@@ -1,0 +1,50 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { ListPosts } from "@/components/ListPosts.jsx";
+import siteConfig from "@/site-config";
+import { getPosts } from "@/utils/posts";
+
+export async function getStaticPaths() {
+  const paths = siteConfig.page.blogLinks.map((nav) => {
+    const href = nav.href.replace("/blog", "");
+    return {
+      params: {
+        path: href === "" ? undefined : href.replace(/^\/+|\/+$/g, ""),
+      },
+    };
+  });
+  return paths;
+}
+
+const { path } = Astro.params;
+
+const posts = await getPosts(path);
+
+function activeLink(pathname: string) {
+  return (
+    Astro.url.pathname.replace(/\/+/g, "/").replace(/\/$/, "") === pathname
+  );
+}
+---
+
+<BaseLayout
+  title="Blog"
+  description="List of all the blog posts."
+  pageNav={true}
+  pageOperate={true}
+>
+  <div class="mb-8 flex flex-col flex-wrap gap-2 sm:flex-row sm:gap-4">
+    {
+      siteConfig.page.blogLinks.map((nav) => (
+        <a
+          aria-label={nav.text}
+          class={`text-3xl font-bold ${activeLink(nav.href) ? "opacity-80" : "opacity-30 hover:opacity-50"}`}
+          href={nav.href}
+        >
+          {nav.text}
+        </a>
+      ))
+    }
+  </div>
+  <ListPosts list={posts} />
+</BaseLayout>
