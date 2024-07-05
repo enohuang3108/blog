@@ -6,7 +6,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-theme-vitesse.netlify.app/",
+  site: "https://enohuang.com/",
   server: {
     port: 1977,
   },

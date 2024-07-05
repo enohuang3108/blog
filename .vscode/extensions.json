@@ -1,7 +1,3 @@
 {
-  "recommendations": [
-    "astro-build.astro-vscode",
-    "dbaeumer.vscode-eslint",
-    "usernamehw.errorlens"
-  ]
+  "recommendations": ["astro-build.astro-vscode", "usernamehw.errorlens"]
 }

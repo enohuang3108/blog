@@ -1,5 +1,5 @@
+import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
-import { Icon } from "@iconify/react/dist/iconify.js";
 
 function DarkModeToggle() {
   const [isDark, setIsDark] = useState(false);

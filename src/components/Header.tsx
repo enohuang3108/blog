@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Icon } from "@iconify/react";
+import useWindowScroll from "@/hooks/useWindowScroll";
 import siteConfig from "@/site-config";
 import { getLinkTarget } from "@/utils/link";
-import useWindowScroll from "@/hooks/useWindowScroll";
+import { Icon } from "@iconify/react";
+import { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
 
 function Header({ url }: { url: URL }) {
@@ -90,7 +90,7 @@ function Header({ url }: { url: URL }) {
             </a>
           ))}
 
-          <a nav-link target="_blank" href="/rss.xml" aria-label="RSS">
+          <a nav-link target="_self" href="/rss.xml" aria-label="RSS">
             <Icon
               icon="lucide:rss"
               className="nav-link text-xl text-black dark:text-white"

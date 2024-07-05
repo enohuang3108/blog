@@ -1,13 +1,13 @@
 export const siteConfig = {
-  author: "Kevin Wong",
+  author: "Eno Huang",
   title: "Vitesse theme for Astro",
   subtitle: "Vitesse theme for Astro, supports Vue and UnoCSS.",
   description: "A Minimal, SEO-friendly portfolio and blog theme for Astro.",
   image: {
-    src: "/hero.jpg",
+    src: "/favicon.png",
     alt: "Website Main Image",
   },
-  email: "kevinwong865@gmail.com",
+  email: "enohuang3108@gmail.com",
   socialLinks: [
     {
       text: "GitHub",
