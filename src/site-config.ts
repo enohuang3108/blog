@@ -1,8 +1,9 @@
 export const siteConfig = {
   author: "Eno Huang",
-  title: "Vitesse theme for Astro",
-  subtitle: "Vitesse theme for Astro, supports Vue and UnoCSS.",
-  description: "A Minimal, SEO-friendly portfolio and blog theme for Astro.",
+  title: "Eno's Blog",
+  subtitle: "Knowledge increases by sharing but not by saving.",
+  description:
+    "Knowledge increases by sharing but not by saving. 這是一個在新竹的軟體工程師，分享技術心得的角落。",
   image: {
     src: "/favicon.png",
     alt: "Website Main Image",
