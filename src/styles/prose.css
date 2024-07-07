@@ -173,6 +173,7 @@
 
 .prose pre code {
   all: unset;
+  white-space: pre;
 }
 
 .prose table {
