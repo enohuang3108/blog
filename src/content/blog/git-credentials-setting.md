@@ -10,7 +10,7 @@ date: 2024-05-01
 
 如果你的 GitHub repo 是 private 的話，每次要進行 Git 操作時 Git 會提示你輸入用戶名和密碼，但是如果你同時開啟了 2FA，輸入密碼的方式就需要改成存取令牌（access tokens）。因為一般人不太可能去記住存取令牌，就會有下面幾種解決方式：
 
-#### 1. `helper = store` (不推薦)
+## 1. `helper = store` (不推薦)
 
 直接把 GitHub access token 明碼存在 `.git-credentials` 內，這個方式的問題也很明顯，access token 很有可能被直接取得。
 
@@ -20,7 +20,7 @@ https://USERNAME:ACCESSTOKEN@email.com
 
 <br/>
 
-#### 2. 使用 **[git-credential-oauth](https://github.com/hickford/git-credential-oauth)**
+## 2. 使用 **[git-credential-oauth](https://github.com/hickford/git-credential-oauth)**
 
 這也是這次要介紹的方法，利用 git-credential-oauth 套件來實現在 CLI 也可能通過 2FA 的方法。<br/>
 （若你使用 Windows 的話 [Git Credential Manager](https://github.com/GitCredentialManager/git-credential-manager)（GCM）可能是個更好的選擇。而在 Linux 上，由於 GCM 是在 .NET 中開發的，難以在 Linux 上打包，所以會使用 git-credential-oauth 來處理。）
