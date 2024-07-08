@@ -3,6 +3,7 @@ import siteConfig from "@/site-config";
 import "@/styles/dot.css";
 import "@/styles/global.css";
 import "@/styles/prose.css";
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 interface Props {
   title?: string;
@@ -83,3 +84,4 @@ function formatCanonicalURL(url: string | URL) {
     <meta name="twitter:image:alt" content={resolvedImage?.alt} />
   )
 }
+<SpeedInsights />

@@ -2,6 +2,7 @@ import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
+import vercel from "@astrojs/vercel/serverless";
 import { defineConfig, passthroughImageService } from "astro/config";
 
 // https://astro.build/config
@@ -23,4 +24,9 @@ export default defineConfig({
   image: {
     service: passthroughImageService(),
   },
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+    },
+  }),
 });
