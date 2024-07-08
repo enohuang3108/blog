@@ -30,7 +30,7 @@ function getDate(date: string) {
 <BaseLayout title={title} description={description} pageType="article">
   <article class="prose">
     <h1>{title}</h1>
-    <p op-50>
+    <p style="opacity: 0.5;">
       {date && <time datetime={getDate(date)}>{date.split(",")}</time>}
       {duration && <span>· {duration}</span>}
       {tag && <span>· {tag}</span>}
