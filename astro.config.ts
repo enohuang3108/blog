@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
 import { defineConfig, passthroughImageService } from "astro/config";
+import remarkMermaid from "remark-mermaidjs";
 
 // https://astro.build/config
 export default defineConfig({
@@ -20,6 +21,7 @@ export default defineConfig({
       },
       wrap: true,
     },
+    remarkPlugins: [remarkMermaid],
   },
   image: {
     service: passthroughImageService(),
