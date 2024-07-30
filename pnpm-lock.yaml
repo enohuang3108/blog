@@ -41,6 +41,9 @@ importers:
       astro:
         specifier: ^4.11.3
         version: 4.11.3(typescript@5.5.3)
+      mermaid:
+        specifier: ^10.9.1
+        version: 10.9.1
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -53,6 +56,9 @@ importers:
       tailwindcss:
         specifier: ^3.4.4
         version: 3.4.4
+      unist-util-visit:
+        specifier: ^5.0.0
+        version: 5.0.0
     devDependencies:
       '@iconify/react':
         specifier: ^5.0.1
@@ -2786,6 +2792,9 @@ packages:
   vfile@6.0.1:
     resolution: {integrity: sha512-1bYqc7pt6NIADBJ98UiG0Bn/CHIVOoZ/IyEkqIruLg0mE1BKzkOXY2D6CSqQIcKqgadppE5lrxgWXJmXd7zZJw==}
 
+  vfile@6.0.2:
+    resolution: {integrity: sha512-zND7NlS8rJYb/sPqkb13ZvbbUoExdbi4w3SfRrMq6R3FvnLQmmfpajJNITuuYm6AZ5uao9vy4BAos3EXBPf2rg==}
+
   vite@5.3.3:
     resolution: {integrity: sha512-NPQdeCU0Dv2z5fu+ULotpuq5yfCS1BzKUIPhNbP3YBfAMGJXbt2nS+sbTFu+qchaqWTD+H3JK++nRwr6XIcp6A==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -4434,7 +4443,7 @@ snapshots:
       devlop: 1.1.0
       hast-util-from-parse5: 8.0.1
       parse5: 7.1.2
-      vfile: 6.0.1
+      vfile: 6.0.2
       vfile-message: 4.0.2
 
   hast-util-from-parse5@8.0.1:
@@ -5749,7 +5758,7 @@ snapshots:
       '@types/mdast': 4.0.4
       mdast-util-to-hast: 13.2.0
       unified: 11.0.5
-      vfile: 6.0.1
+      vfile: 6.0.2
 
   remark-smartypants@2.1.0:
     dependencies:
@@ -6256,6 +6265,12 @@ snapshots:
       vfile-message: 3.1.4
 
   vfile@6.0.1:
+    dependencies:
+      '@types/unist': 3.0.2
+      unist-util-stringify-position: 4.0.0
+      vfile-message: 4.0.2
+
+  vfile@6.0.2:
     dependencies:
       '@types/unist': 3.0.2
       unist-util-stringify-position: 4.0.0
