@@ -4,7 +4,6 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev --host",
-    "prebuild": "pnpm install && npx playwright install --with-deps chromium",
     "build": "astro build",
     "preview": "astro preview",
     "format": "prettier --write ."
