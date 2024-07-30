@@ -20,9 +20,8 @@ export const mermaid: RemarkPlugin<[]> = () => (tree) => {
     node.type = "html";
     node.value = `
       <div class="mermaid">
-        <p>Loading graph...</p>
         <pre class="mermaid-src">${escapeHtml(node.value)}</pre>
-        </div>
+      </div>
     `;
   });
 };
