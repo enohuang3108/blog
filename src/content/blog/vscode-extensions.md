@@ -42,12 +42,12 @@ date: 2024-05-01
 ## 5. Color Highlight
 
 前端程式內常常會有大量的色碼，這個插件會在色碼上加上顏色，可以更直觀閱讀程式的顏色。<br/>
-![Color Highlight demo](../../../public/vscode-extensions/color-highlight.png)
+![Color Highlight demo](public/vscode-extensions/color-highlight.png)
 
 ## 6. Import Cost
 
 在 import library 的時候可以顯示 library 的大小。
-![Import Cost demo](../../../public/vscode-extensions/import-cost.png)
+![Import Cost demo](public/vscode-extensions/import-cost.png)
 
 ## 7. Tailwind CSS IntelliSense
 
@@ -72,11 +72,11 @@ date: 2024-05-01
 ## 11. Toggle Quotes
 
 快速切換`" ' `或是`<> []`。
-![Toggle Quotes Tag demo](../../../public/vscode-extensions/toggle-quotes-demo.gif)
+![Toggle Quotes Tag demo](public/vscode-extensions/toggle-quotes-demo.gif)
 
 ## 插件分析
 
 最後，如果你安裝了太多插件，發現 VSCode 啟動時間變慢了，可以用`ctrl + shift + p`並輸入 Developer: Show Running Extensions 來檢測插件的啟動時間。
-![Toggle Quotes Tag demo](../../../public/vscode-extensions/extensions-analyze.png)
+![Toggle Quotes Tag demo](public/vscode-extensions/extensions-analyze.png)
 
 每次都會裝的大概是這些，之後有新的再來分享～
