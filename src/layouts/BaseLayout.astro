@@ -2,7 +2,6 @@
 import BaseHead from "@/components/BaseHead.astro";
 import { Header } from "@/components/Header.tsx";
 import ScrollToTop from "@/components/ScrollToTop.tsx";
-import { Analytics } from "@vercel/analytics/react";
 import { fade, ViewTransitions } from "astro:transitions";
 
 const { ...head } = Astro.props;
@@ -23,6 +22,5 @@ const { ...head } = Astro.props;
       <slot />
       <ScrollToTop client:load />
     </main>
-    <Analytics />
   </body>
 </html>
