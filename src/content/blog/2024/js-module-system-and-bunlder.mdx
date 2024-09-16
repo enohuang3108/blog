@@ -4,8 +4,6 @@ description: 分析舊專案不能 import library 的原因，並介紹 JS 的�
 date: 2024-09-13
 ---
 
-import { Note } from "@/components/Aside";
-
 公司的專案要導入 library 時遇到了問題，因為專案的技術比較舊，並沒有導入 Bundler ( 其實算是有，但只有做壓縮 ) ，也趁這個機會了解 JS 的模組系統與分析為什麼需要 Bundler，先把目前的 現況分析一下。
 
 ### 現狀分析
@@ -53,10 +51,7 @@ import { Note } from "@/components/Aside";
 });
 ```
 
-<Note title="Note">
-  上面這段 JS 需要用 `<script></script>` 來執行，this 才會是 window，如果用 `
-  <script type="module"></script>`，this 會是 undefined
-</Note>
+> 上面這段 JS 需要用 `<script></script>` 來執行，this 才會是 window，如果用 `<script type="module"></script>`，this 會是 undefined
 
 ![stripts_vs_modules](public/2024/js-module-system-and-bunlder/stripts_vs_modules.png)
 圖片來源：[Modules
@@ -140,10 +135,9 @@ const bundle = () => {
 }
 ```
 
-<Note title="為什麼需要轉成 UMD? Browser 不是支援 ESM 嗎?">
-  Browser 確實可以直接使用 ESM，但因為 SR 放 Library 的 vender.js 不是 Module
-  的，所以這個 Case 不能直接使用 ESM。
-</Note>
+> 為什麼需要轉成 UMD? Browser 不是支援 ESM 嗎?<br/>
+> Browser 確實可以直接使用 ESM，但因為 SR 放 Library 的 vender.js 不是 Module
+> 的，所以這個 Case 不能直接使用 ESM。
 
 ##### 引用模組
 

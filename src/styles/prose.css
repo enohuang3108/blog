@@ -78,20 +78,21 @@
 }
 .prose blockquote {
   font-weight: 500;
-  font-style: italic;
   color: inherit;
   border-left-width: 0.25rem;
-  border-color: rgba(125, 125, 125, 0.3);
-  quotes: "\201C" "\201D" "\2018" "\2019";
+  border-color: #e98b2a;
+  background-color: #f9e3d2;
   margin-top: 1.6em;
   margin-bottom: 1.6em;
-  padding-left: 1em;
+  padding: 1em 1.5em;
+  p {
+    margin: 0;
+  }
 }
-.prose blockquote p:first-of-type::before {
-  content: open-quote;
-}
-.prose blockquote p:last-of-type::after {
-  content: close-quote;
+.dark .prose blockquote {
+  color: inherit;
+  border-color: #e98b2a;
+  background-color: #1c1a18;
 }
 .prose h1 {
   font-weight: 800;
