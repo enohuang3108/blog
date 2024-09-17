@@ -41,6 +41,21 @@ function formatCanonicalURL(url: string | URL) {
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>{title}</title>
+<script async>
+  try {
+    const storedTheme =
+      typeof localStorage !== "undefined" && localStorage.getItem("theme");
+    const theme =
+      storedTheme ||
+      (window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light");
+
+    document.documentElement.classList.add(theme);
+  } catch (error) {
+    console.error(error);
+  }
+</script>
 <meta name="generator" content={Astro.generator} />
 
 <!-- Low Priority Global Metadata -->
