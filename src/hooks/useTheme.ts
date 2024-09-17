@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useTheme() {
+function useTheme(): [String, () => void] {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {

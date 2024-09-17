@@ -1,9 +1,9 @@
 .prose a {
   font-weight: bold;
-  color: #4d94c0;
+  color: #d86c65;
   cursor: pointer;
   border-bottom-width: 1px;
-  border-color: rgba(77, 148, 192, 0.5);
+  border-color: #d86c6566;
   text-wrap: nowrap;
   text-decoration: none;
   transition-property: border-color;
@@ -11,11 +11,9 @@
   transition-duration: 0.15s;
   transition-duration: 0.2s;
 }
-
 .prose a:hover {
-  border-color: rgba(77, 148, 192, 1);
+  border-color: #d86c65;
 }
-
 .prose strong {
   font-weight: 600;
 }
@@ -77,7 +75,6 @@
   margin-bottom: 3em;
 }
 .prose blockquote {
-  font-weight: 500;
   color: inherit;
   border-left-width: 0.25rem;
   border-color: #e98b2a;
@@ -95,31 +92,29 @@
   background-color: #1c1a18;
 }
 .prose h1 {
-  font-weight: 800;
+  font-weight: bold;
   font-size: 2.25em;
   margin-top: 0;
   margin-bottom: 0.8888889em;
   line-height: 1.1111111;
 }
 .prose h2 {
-  font-weight: 700;
-  font-size: 1.5em;
+  font-weight: bold;
+  font-size: 1.6em;
   margin-top: 2em;
-  margin-bottom: 1em;
   line-height: 1.3333333;
 }
 .prose h3 {
-  font-weight: 600;
+  font-weight: bold;
   font-size: 1.25em;
+  color: #4d94c0;
   margin-top: 1.6em;
-  margin-bottom: 0.6em;
   line-height: 1.6;
 }
 .prose h4 {
   font-weight: 600;
   font-size: 1.125rem;
   margin-top: 1.5em;
-  margin-bottom: 0.5em;
   line-height: 1.7;
 }
 
@@ -128,6 +123,10 @@
   margin-block-start: 0.5em;
   margin-block-end: 1.2em;
   line-height: 1.7;
+}
+
+.prose strong {
+  font-weight: bold;
 }
 
 .prose figure figcaption {
@@ -170,7 +169,7 @@
 }
 
 .prose pre code {
-  all: unset;
+  font-size: 0.9rem;
   white-space: pre;
 }
 
@@ -264,9 +263,6 @@
   margin-bottom: 0.75em;
 }
 .prose hr + * {
-  margin-top: 0;
-}
-.prose h2 + * {
   margin-top: 0;
 }
 .prose h3 + * {

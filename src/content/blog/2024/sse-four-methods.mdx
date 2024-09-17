@@ -10,7 +10,7 @@ import { Note } from "@/components/Aside";
 
 可以搭配著程式自己玩玩看 [sse-four-methods](https://github.com/enohuang3108/sse-four-methods)
 
-#### [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)
+## [EventSource](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events)
 
 - Browser 提供處理 SSE 的方法
 - 類似`WebSocket` ，會持久連線，需要`evtSource.close()`來關閉連線。
@@ -25,7 +25,7 @@ evtSource.onmessage = (event) => {
 };
 ```
 
-#### XHR ( [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/XMLHttpRequest))
+## XHR ( [XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/XMLHttpRequest))
 
 - `onprogress` 拿到的 data 會是從開始連接到目前的 data，而不是 chunk
 - 可以用 POST
@@ -48,7 +48,7 @@ $.ajax({
 });
 ```
 
-#### [Fetch](https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch)
+## [Fetch](https://developer.mozilla.org/zh-TW/docs/Web/API/Fetch_API/Using_Fetch)
 
 - 可以拿到目前的 chunk
 - 可以用 POST
@@ -73,7 +73,7 @@ fetch("/event", { method: "POST" }).then((response) => {
 });
 ```
 
-#### Library - [@microsoft/fetch-event-source](https://github.com/Azure/fetch-event-source)
+## Library - [@microsoft/fetch-event-source](https://github.com/Azure/fetch-event-source)
 
 - 可以拿到目前的 chunk
 - 可以用 POST
