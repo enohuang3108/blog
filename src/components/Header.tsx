@@ -90,7 +90,7 @@ function Header({ url }: { url: URL }) {
             </a>
           ))}
 
-          <a nav-link href="/atom.xml" aria-label="RSS">
+          <a href="/atom.xml" aria-label="RSS">
             <Icon
               icon="lucide:rss"
               className="nav-link text-xl text-black dark:text-white"
