@@ -142,7 +142,7 @@
   margin: 0px 3px;
   color: #c7254e;
   word-break: normal;
-  white-space: pre-warp;
+  white-space: pre-wrap;
   word-wrap: break-word;
   font-size: 0.85em;
   background: #eee;
@@ -169,6 +169,8 @@
 }
 
 .prose pre code {
+  margin: 0;
+  padding: 0;
   font-size: 0.9rem;
   white-space: pre;
 }
