@@ -8,7 +8,7 @@ date: 2024-09-06
 
 在單執行緒的狀況下，使用同步 ( Sync ) 的方法執行耗時的 I/O 任務，則會遇到阻塞 (Blocking) 的問題，即使後續任務很簡單，也會因為前面的阻塞而等待，這時候就需要使用非同步 ( Async ) 的方式分批來執行目前的任務。
 
-![Sync and Async](public/how-to-implement-ai-streaming/sync-and-async.jpg)
+![Sync and Async](public/2024/how-to-implement-ai-streaming/sync-and-async.jpg)
 
 ## Web Server 與 Application Server
 
@@ -22,7 +22,7 @@ date: 2024-09-06
 
 WSGI (Web Server Gateway Interface)，如上所述，是 Web Server 與 Application Server 溝通的協議，可以處理同步的請求。
 
-![WSGI](public/how-to-implement-ai-streaming/wsgi.jpg)
+![WSGI](public/2024/how-to-implement-ai-streaming/wsgi.jpg)
 
 ## 什麼是 ASGI
 

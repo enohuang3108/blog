@@ -99,11 +99,11 @@ sudo rm /swapfile
 
 這邊推薦一個美美的系統資源監控工具 [Bashtop](https://github.com/aristocratos/bashtop)，在下圖左方的 mem 那格的最下面可以看到目前 Swap 的使用狀況。
 
-![Bashtop](../../../public/use-swap-space-to-avoid-oom/bashtop.png)
+![Bashtop](public/2024/use-swap-space-to-avoid-oom/bashtop.png)
 
 最後在使用 Swap 的情況下終於不會 OOM 了(灑花)，在 RAM 吃滿16G的情況下，Swap 甚至一度吃到 18G。
 
-![Bashtop](../../../public/use-swap-space-to-avoid-oom/bashtop-swap.png)
+![Bashtop](public/2024/use-swap-space-to-avoid-oom/bashtop-swap.png)
 
 ### 後記
 

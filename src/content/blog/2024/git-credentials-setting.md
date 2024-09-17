@@ -87,4 +87,4 @@ rm -f git-credential-oauth_0.11.1_linux_amd64.tar.gz
 
 當我們進行 Git 操作時，Terminal 會顯示一個 Github 的 OAuth 連結，登入後就可以進行 Git 操作了。
 
-![git credentials demo](../../../public/git-credentials-setting/git-credentials-demo.png)
+![git credentials demo](public/2024/git-credentials-setting/git-credentials-demo.png)
