@@ -3,6 +3,7 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import vercel from "@astrojs/vercel/serverless";
+import playformCompress from "@playform/compress";
 import { defineConfig, passthroughImageService } from "astro/config";
 import { mermaid } from "./src/plugins/mermaid";
 
@@ -12,7 +13,7 @@ export default defineConfig({
   server: {
     port: 1977,
   },
-  integrations: [mdx(), sitemap(), react(), tailwind()],
+  integrations: [mdx(), sitemap(), react(), tailwind(), playformCompress()],
   markdown: {
     shikiConfig: {
       themes: {
