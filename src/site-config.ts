@@ -5,7 +5,7 @@ export const siteConfig = {
   description:
     "Knowledge increases by sharing but not by saving. 這是一個在新竹的軟體工程師，分享技術心得的角落。",
   image: {
-    src: "/favicon.png",
+    src: "/favicon.webp",
     alt: "Website Main Image",
   },
   email: "enohuang3108@gmail.com",
@@ -23,7 +23,7 @@ export const siteConfig = {
   ],
   header: {
     logo: {
-      src: "/favicon.png",
+      src: "/favicon.webp",
       alt: "Logo Image",
     },
     navLinks: [
