@@ -51,25 +51,25 @@ git-credential-oauth --version
 <br/>
 如果不想新增到個人套件庫，也可以直接從 GitHub 下載執行檔：
 
-1.  下載壓縮檔 (確認 URL 的版本是不是最新的)
+4.  下載壓縮檔 (確認 URL 的版本是不是最新的)
 
 ```bash
 wget https://github.com/hickford/git-credential-oauth/releases/download/v0.11.1/git-credential-oauth_0.11.1_linux_amd64.tar.gz
 ```
 
-2.  解壓縮
+5.  解壓縮
 
 ```bash
 tar -xvf git-credential-oauth_0.11.1_linux_amd64.tar.gz
 ```
 
-3.  把執行檔搬到 `/bin`，讓系統可以執行
+6.  把執行檔搬到 `/bin`，讓系統可以執行
 
 ```bash
 sudo mv git-credential-oauth /usr/local/bin
 ```
 
-4.  記得把下載的壓縮檔移除
+7.  記得把下載的壓縮檔移除
 
 ```bash
 rm -f git-credential-oauth_0.11.1_linux_amd64.tar.gz

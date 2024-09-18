@@ -105,7 +105,7 @@ sudo rm /swapfile
 
 ![Bashtop](public/2024/use-swap-space-to-avoid-oom/bashtop-swap.png)
 
-### 後記
+## 後記
 
 後來發現在 WSL 上有個更快的方法，可以直接修改`.wslconfig`這個檔案來設定 Swap，詳細參考 [WSL 設定](https://learn.microsoft.com/zh-tw/windows/wsl/wsl-config#example-wslconfig-file)。
 
