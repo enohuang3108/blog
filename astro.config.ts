@@ -33,4 +33,5 @@ export default defineConfig({
       enabled: true,
     },
   }),
+  // adapter: node({ mode: "standalone" }), //for local testing
 });
