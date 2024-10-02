@@ -17,7 +17,7 @@ export const siteConfig = {
     },
     {
       text: "Linkedin",
-      href: "",
+      href: "https://www.linkedin.com/in/enohuang",
       icon: "tabler:brand-linkedin",
     },
   ],
