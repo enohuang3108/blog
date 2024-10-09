@@ -13,7 +13,15 @@ export default defineConfig({
   server: {
     port: 1977,
   },
-  integrations: [mdx(), sitemap(), react(), tailwind(), playformCompress()],
+  integrations: [
+    mdx(),
+    sitemap(),
+    react(),
+    tailwind({
+      applyBaseStyles: false,
+    }),
+    playformCompress(),
+  ],
   markdown: {
     shikiConfig: {
       themes: {
