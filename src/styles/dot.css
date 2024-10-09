@@ -1,24 +1,28 @@
+html {
+  --dot-size: 1.2px;
+  --dot-space: 24px;
+}
+
 html.dark {
-  --dot-bg-color: #0d1117;
   --dot-color: #2f353c;
   --dot-mask-color: #000000;
 }
 
 html:not(.dark) {
-  --dot-bg-color: #ffffff;
   --dot-color: #a5aeb850;
   --dot-mask-color: #ffffff;
 }
 
 .bg-dot::before {
   content: "";
+  margin: -1px;
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(90deg, var(--dot-bg-color) 22px, transparent 1%) 50%,
-    linear-gradient(var(--dot-bg-color) 22px, transparent 1%) 50%,
-    var(--dot-color);
+  background-image: radial-gradient(
+    var(--dot-color) var(--dot-size),
+    transparent 0
+  );
+  background-size: var(--dot-space) var(--dot-space);
   background-position: center center;
-  background-size: 24px 24px;
   mask-image: linear-gradient(0deg, transparent 5%, var(--dot-mask-color));
 }
