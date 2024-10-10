@@ -1,6 +1,6 @@
 ---
-import { FadeText } from "@/components/ui/fade-text";
 import { IconCloud } from "@/components/ui/icon-cloud";
+import WordRotate from "@/components/ui/word-rotate";
 import FullPageLayout from "@/layouts/FullPageLayout.astro";
 import siteConfig from "@/site-config";
 ---
@@ -11,31 +11,29 @@ import siteConfig from "@/site-config";
       class="grid w-full grid-cols-1 place-content-evenly py-10 lg:grid-cols-2 lg:py-16"
     >
       <div class="m-auto flex flex-col">
-        <div class="flex flex-col space-y-2">
+        <div class="flex flex-col gap-4">
           <h1
             class="text-5xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl"
           >
             Hi there
           </h1>
-          <div class="flex items-baseline">
+          <div class="relative flex items-baseline">
             <h1
               class="text-6xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl"
             >
               I'm
             </h1>
-            <FadeText
-              className="ml-3 text-6xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl"
-              direction="up"
-              framerProps={{
-                show: { transition: { delay: 0.5 } },
-              }}
-              text="Eno"
+            <WordRotate
+              className="absolute top-0 ml-4 mr-1 text-6xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl"
+              words={["Developer", "Innovator", "Eno"]}
               client:load
             />
+            <span
+              class="invisible relative after:text-6xl after:content-['xxxxxxxxx'] after:sm:text-6xl after:md:text-7xl after:lg:text-8xl"
+              aria-hidden="true"></span>
           </div>
-
-          <p class="text-sm leading-normal text-muted-foreground sm:text-xl">
-            A software developer
+          <p class="text-lg leading-normal text-muted-foreground sm:text-xl">
+            A web developer with a love for magic!
           </p>
         </div>
       </div>
