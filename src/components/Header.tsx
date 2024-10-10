@@ -44,7 +44,7 @@ function Header({ url }: { url: URL }) {
     <>
       <header
         id="header"
-        className={`fixed ${windowScrollY > 50 && "backdrop-blur-sm"} z-10 flex h-[80px] w-screen transform items-center justify-between px-6 ${isHeaderHidden ? "-translate-y-full" : "translate-y-0"} transition-transform duration-200 ${windowScrollY > 20 ? "backdrop-blur-[4px]" : ""}`}
+        className={`fixed ${windowScrollY > 50 && "backdrop-blur-sm"} h-header z-10 flex w-screen transform items-center justify-between px-6 ${isHeaderHidden ? "-translate-y-full" : "translate-y-0"} transition-transform duration-200 ${windowScrollY > 20 ? "backdrop-blur-[4px]" : ""}`}
       >
         <div className="flex h-full items-center">
           <a href="/" className="mr-6" aria-label="Header Logo Image">

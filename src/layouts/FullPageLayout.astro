@@ -1,0 +1,28 @@
+---
+import BaseHead from "@/components/BaseHead.astro";
+import { Header } from "@/components/Header.tsx";
+import ScrollToTop from "@/components/ScrollToTop.tsx";
+import SpeedInsights from "@vercel/speed-insights/astro";
+import { fade, ViewTransitions } from "astro:transitions";
+
+const { ...head } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead {...head} />
+    <ViewTransitions />
+  </head>
+  <body class="bg-dot min-h-screen w-full font-sans">
+    <Header client:load url={Astro.url} />
+    <main
+      class="relative mx-auto h-full px-6"
+      transition:animate={fade({ duration: "0.4s" })}
+    >
+      <slot />
+      <ScrollToTop client:load />
+    </main>
+    <SpeedInsights />
+  </body>
+</html>

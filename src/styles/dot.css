@@ -15,7 +15,6 @@ html:not(.dark) {
 
 .bg-dot::before {
   content: "";
-  margin: -1px;
   position: absolute;
   inset: 0;
   background-image: radial-gradient(

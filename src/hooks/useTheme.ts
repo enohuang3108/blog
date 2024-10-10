@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function useTheme(): [String, () => void] {
+function useTheme(): { theme: string; toggleTheme: () => void } {
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function useTheme(): [String, () => void] {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
-  return [theme, toggleTheme];
+  return { theme, toggleTheme };
 }
 
 export { useTheme };

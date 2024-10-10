@@ -41,6 +41,34 @@ export const siteConfig = {
       },
     ],
   },
+  skills: [
+    // Frontend
+    "typescript",
+    "javascript",
+    "react",
+    "html5",
+    "css3",
+    "threedotjs",
+    // Backend
+    "nodedotjs",
+    // Cloud Services
+    "amazonaws",
+    "vercel",
+    "cloudflare",
+    // Testing
+    "testinglibrary",
+    "vitest",
+    // Development Tools
+    "docker",
+    "git",
+    "vite",
+    // CSS Framework
+    "tailwindcss",
+    // Web Framework
+    "astro",
+    // Data Fetching
+    "reactquery",
+  ],
 };
 
 export default siteConfig;

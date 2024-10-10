@@ -1,12 +1,51 @@
 ---
-import Introduction from '@/content/pages/introduction.md';
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import { FadeText } from "@/components/ui/fade-text";
+import { IconCloud } from "@/components/ui/icon-cloud";
+import FullPageLayout from "@/layouts/FullPageLayout.astro";
 import siteConfig from "@/site-config";
-
 ---
 
-<BaseLayout description={siteConfig.description}>
-  <article class="prose">
-    <Introduction />
-  </article>
-</BaseLayout>
+<FullPageLayout description={siteConfig.description}>
+  <section class="flex h-screen w-full pt-12 sm:pt-20 lg:pt-0">
+    <div
+      class="grid w-full grid-cols-1 place-content-evenly py-10 lg:grid-cols-2 lg:py-16"
+    >
+      <div class="m-auto flex flex-col">
+        <div class="flex flex-col space-y-2">
+          <h1
+            class="text-5xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl"
+          >
+            Hi there
+          </h1>
+          <div class="flex items-baseline">
+            <h1
+              class="text-6xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl"
+            >
+              I'm
+            </h1>
+            <FadeText
+              className="ml-3 text-6xl font-bold tracking-tighter sm:text-6xl md:text-7xl lg:text-8xl"
+              direction="up"
+              framerProps={{
+                show: { transition: { delay: 0.5 } },
+              }}
+              text="Eno"
+              client:load
+            />
+          </div>
+
+          <p class="text-sm leading-normal text-muted-foreground sm:text-xl">
+            A software developer
+          </p>
+        </div>
+      </div>
+      <div class="mx-auto flex flex-col">
+        <div
+          class="relative flex size-full max-w-lg items-center justify-center p-8 sm:p-16 lg:p-4"
+        >
+          <IconCloud iconSlugs={siteConfig.skills} client:load />
+        </div>
+      </div>
+    </div>
+  </section>
+</FullPageLayout>

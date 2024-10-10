@@ -50,6 +50,9 @@ export default {
           5: "hsl(var(--chart-5))",
         },
       },
+      height: {
+        header: "80px",
+      },
     },
   },
   darkMode: ["class"],
