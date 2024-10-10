@@ -55,6 +55,22 @@ function formatCanonicalURL(url: string | URL) {
     console.error(error);
   }
 </script>
+
+<!-- Google tag (gtag.js) -->
+<script
+  async
+  is:inline
+  src="https://www.googletagmanager.com/gtag/js?id=G-5G34JKF5B2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+
+  gtag("config", "G-5G34JKF5B2");
+</script>
+
 <meta name="generator" content={Astro.generator} />
 
 <!-- Low Priority Global Metadata -->
