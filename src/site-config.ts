@@ -32,8 +32,8 @@ export const siteConfig = {
         href: "/blog",
       },
       {
-        text: "Practices",
-        href: "/practices",
+        text: "Slides",
+        href: "/slides",
       },
     ],
   },
@@ -45,6 +45,15 @@ export const siteConfig = {
       },
     ],
   },
+  slides: [
+    {
+      title: "字型設置與優化",
+      description: "介紹字型設置、格式選擇、壓縮優化與瀏覽器加載機制",
+      date: "2025-08-01",
+      url: "https://enohuang3108.github.io/slides/2025/font-settings-and-optimization/",
+      tags: ["Frontend", "Font"],
+    },
+  ],
   skills: [
     // Frontend
     "typescript",
