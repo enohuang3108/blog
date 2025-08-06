@@ -64,6 +64,7 @@ export const siteConfig = {
     "threedotjs",
     // Backend
     "nodedotjs",
+    "python",
     // Cloud Services
     "amazonaws",
     "vercel",
