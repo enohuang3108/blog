@@ -1,0 +1,17 @@
+---
+import { ListSlides } from "@/components/ListSlides.tsx";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import siteConfig from "@/site-config";
+---
+
+<BaseLayout
+  title="Slides"
+  description="Collection of my slides and presentations."
+  pageNav={true}
+  pageOperate={true}
+>
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold opacity-80">Slides</h1>
+  </div>
+  <ListSlides list={siteConfig.slides} />
+</BaseLayout>
