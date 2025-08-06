@@ -31,6 +31,10 @@ export const siteConfig = {
         text: "Blog",
         href: "/blog",
       },
+      {
+        text: "Practices",
+        href: "/practices",
+      },
     ],
   },
   page: {
