@@ -69,6 +69,7 @@
 
   html {
     -webkit-font-smoothing: antialiased;
+    scrollbar-gutter: stable;
   }
 
   html.dark {
