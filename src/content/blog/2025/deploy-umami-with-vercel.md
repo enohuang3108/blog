@@ -1,0 +1,70 @@
+---
+title: 透過 Vercel 部署 Umami
+description: 紀錄如何在 Vercel 上部署 Umami，並使用 Supabase 作為資料庫
+date: 2025-09-05
+---
+
+## 1. 建立 Supabase 資料庫
+
+1. 在 Vercel 上建立 Supabase Project (Verel 會自動為你在 Supabase 上開一個 Project)
+   * Region 選擇 **Washington** 機房。
+   * 選擇 **Free Plan**。
+   * 設定 **Database Name**。
+   * 完成建立。
+1. 在 Vercel 中找到 **`POSTGRES_PRISMA_URL`**，稍後會用來設定 Umami 的環境變數。
+
+![umami-variables](/2025/deploy-umami-with-vercel/umami-variables.webp)
+
+
+> **Supabase 免費方案有以下限制**
+>
+> Unlimited API requests • Shared CPU • 500 MB RAM • 50K MAU • 500 MB database space • 5 GB bandwidth • 1 GB file storage
+---
+
+## 為什麼 Supabase 選擇開在 Washington?
+
+一開始還自作聰明的考慮台灣與東京和香港哪個 AWS Latency 比較低 (因為 Supabase 是使用 AWS 機房)， 但後來想到使用者的請求並不會直接發給 Supabase，而是 Umami 對 Supabase 發起請求，所以要看的應該是 Umami 送出請求時機器的 region 在哪邊。
+
+因為 Umami 是使用 NextJS API routes 作為後端，所以當部署在 Vercel 上時，Umami 的後端會被 Vercel 部屬在某個機房上，為了知道 Vercel 把 Umami 部屬在哪裡可以使用 `curl -I https://<your-umami-domain>/api/heartbeat`來檢查：
+```bash
+$ curl -I https://<your-umami-domain>/api/heartbeat
+
+HTTP/2 200
+x-vercel-id: hkg1::iad1::xxx-xxxxxxxx-xxx
+```
+從這邊的 [x-vercel-id 結構](https://vercel.com/docs/headers/response-headers#x-vercel-id)可以看出來
+`<request hit region>::<executed function region>::<request-id>`
+請求先進入 **香港 (hkg1)**  CDN 節點，在到 **Virginia(iad1)** 執行 Function，所以既然實際執行 Function 的機器在美國，就沒有必要把 Supabase 開在亞洲，而是更靠近的 **Washington**。
+
+(附上使用 [AWS Latency Test](https://awsspeedtest.com/latency) 比較的結果，但最後決定使用 Washington)
+
+![aws-latency-test](/2025/deploy-umami-with-vercel/aws-latency-test.webp)
+
+
+
+## 2. 部署 Umami 到 Vercel
+
+1. Fork [Umami](https://github.com/umami-software/umami) 專案到你自己的 GitHub
+2. [為了可以連接 Supabase](https://umami.is/docs/guides/running-on-supabase)，需要修改 `db/postgresql/schema.prisma`這個檔案：
+```prisma
+datasource db {
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
+  directUrl    = env("DIRECT_DATABASE_URL") # add this
+  relationMode = "prisma"
+}
+```
+3. 把剛剛的更新推到 GitHub 上
+4. 到 Vercel 上 import 剛剛 Fork 的 GitHub 專案，並加入兩個環境變數，第一個 `DATABASE_URL` 就是剛剛的 `POSTGRES_PRISMA_URL`，第二個 `DIRECT_DATABASE_URL` 可以直接從 `POSTGRES_PRISMA_URL` 修改，但較記得 port 要改成 `5432`，結構如下：
+```
+DATABASE_URL=postgres://[db-user].[project-ref]:[db-password]@aws-0-[aws-region].pooler.supabase.com:6543/[db-name]?pgbouncer=true&connection_limit=1
+
+DIRECT_DATABASE_URL=postgres://postgres.[my-supabase-project-id]:[db-password]@aws-0-[aws-region].pooler.supabase.com:5432/postgres
+```
+
+---
+
+## 3. 完成部署 🎉
+
+部署完成後，你就可以透過 Vercel 提供的 URL 開啟 Umami 後台並開始使用。
+Umami 的預設帳號密碼是 `admin/umami`，記得首次登入時去修改管理員帳號密碼。
