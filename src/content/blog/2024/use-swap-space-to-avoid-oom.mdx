@@ -5,6 +5,8 @@ date: 2024-07-08
 # heroImage: /vscode-extensions/heroImage.png
 ---
 
+import { ImageZoom } from '@/components/ui/image-zoom.tsx';
+
 本篇文章是參考 [Chapter 15. Swap Space](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-swapspace#ch-swapspace) 的筆記。
 
 最近在 Study LLM 的技術因為記憶體不夠的關係，一直發生 **OOM(Out of memory)** 的問題，前輩建議可以用 Swap 解決。
@@ -99,11 +101,15 @@ sudo rm /swapfile
 
 這邊推薦一個美美的系統資源監控工具 [Bashtop](https://github.com/aristocratos/bashtop)，在下圖左方的 mem 那格的最下面可以看到目前 Swap 的使用狀況。
 
-![Bashtop](public/2024/use-swap-space-to-avoid-oom/bashtop.png)
+<ImageZoom client:visible>
+  <img src="/2024/use-swap-space-to-avoid-oom/bashtop.png" alt="Bashtop" />
+</ImageZoom>
 
 最後在使用 Swap 的情況下終於不會 OOM 了(灑花)，在 RAM 吃滿16G的情況下，Swap 甚至一度吃到 18G。
 
-![Bashtop](public/2024/use-swap-space-to-avoid-oom/bashtop-swap.png)
+<ImageZoom client:visible>
+  <img src="/2024/use-swap-space-to-avoid-oom/bashtop-swap.png" alt="Bashtop" />
+</ImageZoom>
 
 ## 後記
 
