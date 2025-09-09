@@ -28,11 +28,10 @@ const resolvedImage = image?.src
 
 const canonicalURL = new URL(Astro.request.url, Astro.site);
 
-function formatCanonicalURL(url: string | URL) {
-  const path = url.toString();
-  const hasQueryParams = path.includes("?");
-  if (hasQueryParams) path.replace(/\/?$/, "");
-  return path.replace(/\/?$/, hasQueryParams ? "" : "/");
+function normalizeCanonicalURL(url: URL): string {
+  // remove query string or utm parameters
+  const { origin, pathname } = url;
+  return `${origin}${pathname}${pathname.endsWith('/') ? '' : '/'}`;
 }
 ---
 
@@ -73,12 +72,12 @@ function formatCanonicalURL(url: string | URL) {
 />
 
 <!-- Page Metadata -->
-<link rel="canonical" href={formatCanonicalURL(canonicalURL)} />
+<link rel="canonical" href={normalizeCanonicalURL(canonicalURL)} />
 <meta name="description" content={description} />
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={pageType} />
-<meta property="og:url" content={formatCanonicalURL(canonicalURL)} />
+<meta property="og:url" content={normalizeCanonicalURL(canonicalURL)} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 {resolvedImage?.src && <meta property="og:image" content={resolvedImage.src} />}
@@ -90,7 +89,7 @@ function formatCanonicalURL(url: string | URL) {
 
 <!-- X / Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={formatCanonicalURL(canonicalURL)} />
+<meta property="twitter:url" content={normalizeCanonicalURL(canonicalURL)} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 {
