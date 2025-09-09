@@ -4,7 +4,18 @@ description: 簡單介紹 MCP 的目的與架構
 date: 2025-08-06
 ---
 
+import { Image } from 'astro:assets';
 import { ImageZoom } from '@/components/ui/image-zoom.tsx';
+
+import mcpArchitecture from '@/assets/2025/introducing-mcp/mcp-architecture.webp';
+import mcpClientServerArchitecture from '@/assets/2025/introducing-mcp/mcp-client-server-architecture.webp';
+import beforeMcpDevelopment from '@/assets/2025/introducing-mcp/before-mcp-development.webp';
+import afterMcpDevelopment1 from '@/assets/2025/introducing-mcp/after-mcp-development-1.webp';
+import afterMcpDevelopment2 from '@/assets/2025/introducing-mcp/after-mcp-development-2.webp';
+import mcpFlow from '@/assets/2025/introducing-mcp/mcp-flow.webp';
+import mcpStdioTransport from '@/assets/2025/introducing-mcp/mcp-stdio-transport.webp';
+import mcpStreamableHttp from '@/assets/2025/introducing-mcp/mcp-streamable-http.webp';
+import mcpStatelessHttp from '@/assets/2025/introducing-mcp/mcp-stateless-http.webp';
 
 ## AI Agent
 
@@ -12,7 +23,7 @@ AI 如果要與外部世界（資料庫、網路等）互動，必須透過工�
 
 為了讓不同的 AI 能夠使用不同的工具，甚至能夠使用第三方開發的工具，這就需要一個標準化的構通方是，這就是 **MCP (Model Context Protocol)** 的目的。透過 MCP 規範開發的工具，任何遵循相同協議的系統都能夠使用。
 <ImageZoom client:visible>
-  <img src="/2025/introducing-mcp/mcp-architecture.webp" alt="MCP-intro" />
+  <Image src={mcpArchitecture} alt="MCP-intro" />
 </ImageZoom>
 
 ## Introducing MCP
@@ -27,7 +38,7 @@ MCP 採用 Client-Server 架構（或是加上 Host）：
 - **MCP Client**: 負責連接 Server 並管理 Context 的 Component
 - **MCP Host**: AI 的應用程式，像是 Cursor、Claude Desktop，一個Host 可能有多個 Client
 <ImageZoom client:visible>
-  <img src="/2025/introducing-mcp/mcp-client-server-architecture.webp" alt="Introducing MCP" />
+  <Image src={mcpClientServerArchitecture} alt="Introducing MCP" />
 </ImageZoom>
 
 ### MCP 的目的
@@ -36,17 +47,17 @@ MCP 採用 Client-Server 架構（或是加上 Host）：
 
 **使用 MCP 之前：**
 <ImageZoom client:visible>
-  <img src="/2025/introducing-mcp/before-mcp-development.webp" alt="使用 MCP 之前" class="w-1/2 rounded-lg mx-auto" />
+  <Image src={beforeMcpDevelopment} alt="使用 MCP 之前" class="w-1/2 rounded-lg mx-auto" />
 </ImageZoom>
 
 **使用 MCP 之後：**
 
 <div class="flex gap-4">
   <ImageZoom client:visible>
-    <img src="/2025/introducing-mcp/after-mcp-development-1.webp" alt="使用 MCP 之後" class="rounded-lg" />
+    <Image src={afterMcpDevelopment1} alt="使用 MCP 之後" class="rounded-lg" />
   </ImageZoom>
   <ImageZoom client:visible>
-    <img src="/2025/introducing-mcp/after-mcp-development-2.webp" alt="使用 MCP 之後" class="rounded-lg" />
+    <Image src={afterMcpDevelopment2} alt="使用 MCP 之後" class="rounded-lg" />
   </ImageZoom>
 </div>
 
@@ -63,7 +74,7 @@ MCP 的大致流程如下：
 7. 將執行結果回傳給 LLM，LLM 基於結果做出結論或進行下一輪循環
 
 <ImageZoom client:visible>
-  <img src="/2025/introducing-mcp/mcp-flow.webp" alt="MCP Flow" />
+  <Image src={mcpFlow} alt="MCP Flow" />
 </ImageZoom>
 
 ### MCP Transports
@@ -77,7 +88,7 @@ MCP 支援本地與遠端傳輸方式：
 - 支援雙向通訊
 
 <ImageZoom client:visible>
-  <img src="/2025/introducing-mcp/mcp-stdio-transport.webp" alt="STDIO" />
+  <Image src={mcpStdioTransport} alt="STDIO" />
 </ImageZoom>
 
 #### HTTP（遠端）
@@ -91,7 +102,7 @@ MCP 支援本地與遠端傳輸方式：
 - 支援 Server 主動向 Client 發送通知
 
 <ImageZoom client:visible>
-  <img src="/2025/introducing-mcp/mcp-streamable-http.webp" alt="Streamable MCP" />
+  <Image src={mcpStreamableHttp} alt="Streamable MCP" />
 </ImageZoom>
 
 ##### 2. Stateless HTTP
@@ -101,7 +112,7 @@ MCP 支援本地與遠端傳輸方式：
 - 缺點：無法支援 Server 主動通知功能，需要在可擴展性與功能性之間做出取捨
 
 <ImageZoom client:visible>
-  <img src="/2025/introducing-mcp/mcp-stateless-http.webp" alt="Stateless HTTP" />
+  <Image src={mcpStatelessHttp} alt="Stateless HTTP" />
 </ImageZoom>
 
 ## MCP Example

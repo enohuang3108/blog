@@ -5,7 +5,13 @@ date: 2024-05-01
 # heroImage: /vscode-extensions/heroImage.png
 ---
 
+import { Image } from 'astro:assets';
 import { ImageZoom } from '@/components/ui/image-zoom.tsx';
+
+import colorHighlight from '@/assets/2024/vscode-extensions/color-highlight.png';
+import importCost from '@/assets/2024/vscode-extensions/import-cost.png';
+import toggleQuotesDemo from '@/assets/2024/vscode-extensions/toggle-quotes-demo.gif';
+import extensionsAnalyze from '@/assets/2024/vscode-extensions/extensions-analyze.png';
 
 這篇沒意外的話會是部落格的第一篇文章。之前一直想培養寫文章的習慣，不過一直遲遲沒有下手，就先挑個簡單的題目來寫吧。
 
@@ -14,7 +20,7 @@ import { ImageZoom } from '@/components/ui/image-zoom.tsx';
 如果你是前端工程師，應該都會裝這個插件。這是一個 code format 的工具，支援 JS、JSX、TS、CSS、HTML... 如果公司有規定 coding style 的話，這是一個很方便的工具。
 
 <ImageZoom client:visible>
-  <img src="https://lh3.googleusercontent.com/sfHO5MKevLesNw1grlh21j0hgtH5IaMmASI5aVv_-gYyF7dvA96FlS7mdagWM6NDPxfEY2JwkArooEZZPOzXmu01-g=w640-h400-e365-rj-sc0x00ffffff" alt="Perttier" />
+  <img src="https://camo.githubusercontent.com/292e123a137d6dcb60351194dfc4f8182b6c54c37b204ca3d55222e90623cdbc/68747470733a2f2f756e706b672e636f6d2f70726574746965722d6c6f676f40312e302e332f696d616765732f70726574746965722d62616e6e65722d6c696768742e737667" alt="Perttier" />
 </ImageZoom>
 
 ## 2. Error Lens
@@ -53,14 +59,14 @@ import { ImageZoom } from '@/components/ui/image-zoom.tsx';
 
 前端程式內常常會有大量的色碼，這個插件會在色碼上加上顏色，可以更直觀閱讀程式的顏色。<br/>
 <ImageZoom client:visible>
-  <img src="/2024/vscode-extensions/color-highlight.png" alt="Color Highlight demo" />
+  <Image src={colorHighlight} alt="Color Highlight demo" />
 </ImageZoom>
 
 ## 6. Import Cost
 
 在 import library 的時候可以顯示 library 的大小。
 <ImageZoom client:visible>
-  <img src="/2024/vscode-extensions/import-cost.png" alt="Import Cost demo" />
+  <Image src={importCost} alt="Import Cost demo" />
 </ImageZoom>
 
 ## 7. Tailwind CSS IntelliSense
@@ -95,14 +101,14 @@ import { ImageZoom } from '@/components/ui/image-zoom.tsx';
 
 快速切換`" ' `或是`<> []`。
 <ImageZoom client:visible>
-  <img src="/2024/vscode-extensions/toggle-quotes-demo.gif" alt="Toggle Quotes Tag demo" />
+  <Image src={toggleQuotesDemo} alt="Toggle Quotes Tag demo" />
 </ImageZoom>
 
 ## 插件分析
 
 最後，如果你安裝了太多插件，發現 VSCode 啟動時間變慢了，可以用`ctrl + shift + p`並輸入 Developer: Show Running Extensions 來檢測插件的啟動時間。
 <ImageZoom client:visible>
-  <img src="/2024/vscode-extensions/extensions-analyze.png" alt="Toggle Quotes Tag demo" />
+  <Image src={extensionsAnalyze} alt="Toggle Quotes Tag demo" />
 </ImageZoom>
 
 每次都會裝的大概是這些，之後有新的再來分享～

@@ -3,7 +3,11 @@ title: 透過 Vercel 部署 Umami
 description: 紀錄如何在 Vercel 上部署 Umami，並使用 Supabase 作為資料庫
 date: 2025-09-05
 ---
+import { Image } from 'astro:assets';
 import { ImageZoom } from '@/components/ui/image-zoom.tsx';
+
+import umamiVariables from '@/assets/2025/deploy-umami-with-vercel/umami-variables.webp';
+import awsLatencyTest from '@/assets/2025/deploy-umami-with-vercel/aws-latency-test.webp';
 
 ## 1. 建立 Supabase 資料庫
 
@@ -15,7 +19,7 @@ import { ImageZoom } from '@/components/ui/image-zoom.tsx';
 1. 在 Vercel 中找到 **`POSTGRES_PRISMA_URL`**，稍後會用來設定 Umami 的環境變數。
 
 <ImageZoom client:visible>
-  <img src="/2025/deploy-umami-with-vercel/umami-variables.webp" alt="umami-variables" />
+  <Image src={umamiVariables} alt="umami-variables" />
 </ImageZoom>
 
 
@@ -42,7 +46,7 @@ x-vercel-id: hkg1::iad1::xxx-xxxxxxxx-xxx
 (附上使用 [AWS Latency Test](https://awsspeedtest.com/latency) 比較的結果，但最後決定使用 Washington)
 
 <ImageZoom client:visible>
-  <img src="/2025/deploy-umami-with-vercel/aws-latency-test.webp" alt="aws-latency-test" />
+  <Image src={awsLatencyTest} alt="aws-latency-test" />
 </ImageZoom>
 
 

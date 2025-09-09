@@ -5,7 +5,11 @@ date: 2024-07-08
 # heroImage: /vscode-extensions/heroImage.png
 ---
 
+import { Image } from 'astro:assets';
 import { ImageZoom } from '@/components/ui/image-zoom.tsx';
+
+import bashtop from '@/assets/2024/use-swap-space-to-avoid-oom/bashtop.png';
+import bashtopSwap from '@/assets/2024/use-swap-space-to-avoid-oom/bashtop-swap.png';
 
 本篇文章是參考 [Chapter 15. Swap Space](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-swapspace#ch-swapspace) 的筆記。
 
@@ -102,13 +106,13 @@ sudo rm /swapfile
 這邊推薦一個美美的系統資源監控工具 [Bashtop](https://github.com/aristocratos/bashtop)，在下圖左方的 mem 那格的最下面可以看到目前 Swap 的使用狀況。
 
 <ImageZoom client:visible>
-  <img src="/2024/use-swap-space-to-avoid-oom/bashtop.png" alt="Bashtop" />
+  <Image src={bashtop} alt="Bashtop" />
 </ImageZoom>
 
 最後在使用 Swap 的情況下終於不會 OOM 了(灑花)，在 RAM 吃滿16G的情況下，Swap 甚至一度吃到 18G。
 
 <ImageZoom client:visible>
-  <img src="/2024/use-swap-space-to-avoid-oom/bashtop-swap.png" alt="Bashtop" />
+  <Image src={bashtopSwap} alt="Bashtop" />
 </ImageZoom>
 
 ## 後記

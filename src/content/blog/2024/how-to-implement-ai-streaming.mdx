@@ -4,11 +4,19 @@ description: 本文探討 WSGI 與 ASGI 的差異，並展示如何在 Django �
 date: 2024-09-06
 ---
 
+import { Image } from 'astro:assets';
+import { ImageZoom } from '@/components/ui/image-zoom.tsx';
+
+import syncAndAsync from '@/assets/2024/how-to-implement-ai-streaming/sync-and-async.jpg';
+import wsgiImage from '@/assets/2024/how-to-implement-ai-streaming/wsgi.jpg';
+
 最近在處理 AI Streaming 回覆的功能，遇到了一些同步與非同步的問題。
 
 在單執行緒的狀況下，使用同步 ( Sync ) 的方法執行耗時的 I/O 任務，則會遇到阻塞 (Blocking) 的問題，即使後續任務很簡單，也會因為前面的阻塞而等待，這時候就需要使用非同步 ( Async ) 的方式分批來執行目前的任務。
 
-![Sync and Async](public/2024/how-to-implement-ai-streaming/sync-and-async.jpg)
+<ImageZoom client:visible>
+  <Image src={syncAndAsync} alt="Sync and Async" />
+</ImageZoom>
 
 ## Web Server 與 Application Server
 
@@ -22,7 +30,9 @@ date: 2024-09-06
 
 WSGI (Web Server Gateway Interface)，如上所述，是 Web Server 與 Application Server 溝通的協議，可以處理同步的請求。
 
-![WSGI](public/2024/how-to-implement-ai-streaming/wsgi.jpg)
+<ImageZoom client:visible>
+  <Image src={wsgiImage} alt="WSGI" />
+</ImageZoom>
 
 ## 什麼是 ASGI
 
@@ -43,9 +53,9 @@ from django.core.asgi import get_asgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mysite.settings')
 
 application = ProtocolTypeRouter(
-    {
-        "http": get_asgi_application(),
-    }
+    {
+        "http": get_asgi_application(),
+    }
 )
 ```
 
@@ -53,7 +63,7 @@ application = ProtocolTypeRouter(
 
 ```python
 INSTALLED_APPS = [
-    'daphne',
+    'daphne',
 	#...
 ]
 # 將 WSGI_APPLICATION = 'mysite.wsgi.application' 改成以下
@@ -103,8 +113,8 @@ for i in my_list
 for ... in ... 的 `in` 其實就是複寫了 `__iter__` 將 Iterable 轉成 Iterator
 
 ```python
- @overload
-    def __iter__(self: LiteralString) -> Iterator[LiteralString]:
+ @overload
+    def __iter__(self: LiteralString) -> Iterator[LiteralString]:
 ```
 
 ### Generator
